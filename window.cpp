@@ -48,6 +48,8 @@ static SDL_GLContext gl_context;
 
 namespace window {
 
+    std::queue<SDL_Keycode> keyboard_input;
+
     void init() {
 
         // Setup SDL
@@ -190,6 +192,9 @@ namespace window {
                 event.window.windowID == SDL_GetWindowID(window_ptr)) {
                 is_exiting_value = true;
             }
+            if (event.type == SDL_KEYDOWN) {
+                keyboard_input.push(event.key.keysym.sym);
+            }
         }
 
         // Start the Dear ImGui frame
@@ -200,6 +205,7 @@ namespace window {
     }
 
     void end_frame() {
+        keyboard_input = {};
         ImGuiIO& io = ImGui::GetIO(); (void)io;
         ImGui::Render();
         glViewport(0, 0, (int)io.DisplaySize.x, (int)io.DisplaySize.y);
