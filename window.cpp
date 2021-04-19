@@ -63,7 +63,8 @@ static SDL_GLContext gl_context;
 
 namespace window {
 
-    std::queue<SDL_Keycode> keyboard_input;
+    std::queue<SDL_Keysym> keyboard_input;
+    std::string text_input;
 
     void init() {
 
@@ -156,7 +157,7 @@ namespace window {
         ImGui::CreateContext();
         ImGuiIO& io = ImGui::GetIO(); (void)io;
         // Enable Keyboard Controls
-        io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
+        //io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
         // Enable Gamepad Controls
         //io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;
         // Enable Docking
@@ -223,6 +224,7 @@ namespace window {
         //  NULL, io.Fonts->GetGlyphRangesJapanese());
         //
         //IM_ASSERT(font != NULL);
+        SDL_StartTextInput();
 
     }
 
@@ -256,7 +258,10 @@ namespace window {
                 is_exiting_value = true;
             }
             if (event.type == SDL_KEYDOWN) {
-                keyboard_input.push(event.key.keysym.sym);
+                keyboard_input.push(event.key.keysym);
+            }
+            if (event.type == SDL_TEXTINPUT) {
+                text_input += event.text.text;
             }
         }
 
