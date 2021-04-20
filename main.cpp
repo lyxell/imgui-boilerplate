@@ -8,11 +8,6 @@ int main() {
     bool show_another_window = false;
     while (!window::is_exiting()) {
         window::start_frame();
-        while (window::keyboard_input.size()) {
-            std::cout << window::keyboard_input.back() << " was pressed";
-            std::cout << std::endl;
-            window::keyboard_input.pop();
-        }
         ImGui::ShowDemoWindow(&show_demo_window);
         {
             static float f = 0.0f;

@@ -1,4 +1,4 @@
+demo
 *.o
 .gdb_history
-example_sdl_opengl3
 imgui.ini
