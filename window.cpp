@@ -13,6 +13,7 @@
 #include "imgui.h"
 #include "imgui_impl_sdl.h"
 #include "imgui_impl_opengl3.h"
+#include "FiraMono.hpp"
 #include <stdio.h>
 #include <SDL.h>
 
@@ -224,8 +225,7 @@ namespace window {
         //  NULL, io.Fonts->GetGlyphRangesJapanese());
         //
         //IM_ASSERT(font != NULL);
-
-        io.Fonts->AddFontFromFileTTF("fonts/FiraMono-Regular.ttf", 14.0f);
+        io.Fonts->AddFontFromMemoryCompressedTTF(FiraMono_compressed_data, FiraMono_compressed_size, 14.0f);
 
         // Style
         style.WindowMenuButtonPosition = -1;
