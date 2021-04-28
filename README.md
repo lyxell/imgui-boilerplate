@@ -4,7 +4,7 @@ to aid bootstrapping.
 ### usage
 
 ```c++
-#include "imgui-boilerplate/window.hpp"
+#include "imgui-boilerplate/window.h"
 #include "imgui.h"
 
 int main() {

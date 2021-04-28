@@ -1,4 +1,4 @@
-#include "window.hpp"
+#include "window.h"
 
 // Dear ImGui: standalone example application for SDL2 + OpenGL
 // (SDL is a cross-platform general purpose library for handling windows,
