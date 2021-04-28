@@ -13,9 +13,11 @@
 
 EXE = demo
 IMGUI_DIR = imgui
-SOURCES = main.cpp window.cpp
-SOURCES += $(IMGUI_DIR)/imgui.cpp $(IMGUI_DIR)/imgui_demo.cpp
-SOURCES += $(IMGUI_DIR)/imgui_draw.cpp $(IMGUI_DIR)/imgui_tables.cpp
+SOURCES = window.cpp
+SOURCES += $(IMGUI_DIR)/imgui.cpp
+SOURCES += $(IMGUI_DIR)/imgui_demo.cpp
+SOURCES += $(IMGUI_DIR)/imgui_draw.cpp
+SOURCES += $(IMGUI_DIR)/imgui_tables.cpp
 SOURCES += $(IMGUI_DIR)/imgui_widgets.cpp
 SOURCES += $(IMGUI_DIR)/backends/imgui_impl_sdl.cpp
 SOURCES += $(IMGUI_DIR)/backends/imgui_impl_opengl3.cpp
@@ -117,11 +119,8 @@ endif
 %.o:imgui/examples/libs/glad/src/%.c
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-all: $(EXE)
+all: $(OBJS)
 	@echo Build complete for $(ECHO_MESSAGE)
-
-$(EXE): $(OBJS)
-	$(CXX) -o $@ $^ $(CXXFLAGS) $(LIBS)
 
 clean:
 	rm -f $(EXE) $(OBJS)
