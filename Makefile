@@ -1,3 +1,5 @@
+TARGET=imgui-boilerplate.a
+
 IMGUI_DIR = imgui
 
 SOURCES = window.cpp
@@ -50,7 +52,10 @@ endif
 %.o: imgui/examples/libs/gl3w/GL/%.c
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-all: $(OBJS)
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(AR) -rcs $(TARGET) $^
 
 clean:
-	rm -f $(EXE) $(OBJS)
+	rm -f $(TARGET) $(OBJS)
