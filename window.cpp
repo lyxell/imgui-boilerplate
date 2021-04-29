@@ -229,6 +229,7 @@ void init() {
     style.WindowMenuButtonPosition = -1;
     style.TabRounding = 0.0f;
     style.WindowBorderSize = 1.0f;
+    style.IndentSpacing = 12.0f;
     ImVec4* c = style.Colors;
     c[ImGuiCol_Text] = ImVec4(0.00f, 0.00f, 0.00f, 1.00f);
     c[ImGuiCol_TextDisabled] = ImVec4(0.76f, 0.76f, 0.76f, 1.00f);
