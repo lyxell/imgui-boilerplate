@@ -162,7 +162,7 @@ void init() {
     // Enable Docking
     io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
     // Enable Multi-Viewport / Platform Windows
-    io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
+    // io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
     // io.ConfigViewportsNoAutoMerge = true;
     // io.ConfigViewportsNoTaskBarIcon = true;
 
