@@ -228,7 +228,7 @@ void init() {
     // Style
     style.WindowMenuButtonPosition = -1;
     style.TabRounding = 0.0f;
-    style.WindowBorderSize = 1.0f;
+    style.WindowBorderSize = 0.0f;
     style.IndentSpacing = 12.0f;
     ImVec4* c = style.Colors;
     c[ImGuiCol_Text] = ImVec4(0.00f, 0.00f, 0.00f, 1.00f);
@@ -285,7 +285,7 @@ void init() {
     c[ImGuiCol_NavHighlight] = ImVec4(0.79f, 0.79f, 0.79f, 1.00f);
     c[ImGuiCol_NavWindowingHighlight] = ImVec4(1.00f, 1.00f, 1.00f, 0.70f);
     c[ImGuiCol_NavWindowingDimBg] = ImVec4(0.80f, 0.80f, 0.80f, 0.20f);
-    c[ImGuiCol_ModalWindowDimBg] = ImVec4(1.00f, 0.91f, 0.00f, 1.00f);
+    c[ImGuiCol_ModalWindowDimBg] = ImVec4(0.00f, 0.00f, 0.00f, 0.28f);
 
     //
     //
