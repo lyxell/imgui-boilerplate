@@ -228,6 +228,7 @@ void init() {
     // Style
     style.WindowMenuButtonPosition = -1;
     style.TabRounding = 0.0f;
+    style.WindowRounding = 2.0f;
     style.WindowBorderSize = 0.0f;
     style.IndentSpacing = 12.0f;
     ImVec4* c = style.Colors;
