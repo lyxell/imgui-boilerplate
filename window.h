@@ -11,6 +11,8 @@ extern std::string text_input;
 bool is_exiting();
 void start_frame();
 void end_frame();
+void text(const char* str);
+void heading(const char*);
 void init();
 void destroy();
 }; // namespace window

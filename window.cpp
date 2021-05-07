@@ -10,7 +10,10 @@
 // read the top of imgui.cpp.
 // Read online: https://github.com/ocornut/imgui/tree/master/docs
 
-#include "fonts/FiraMono.hpp"
+#include "fonts/FiraMono_Regular.h"
+#include "fonts/FiraMono_Medium.h"
+#include "fonts/FiraMono_Bold.h"
+#include "fonts/FiraSans_Regular.h"
 #include "imgui.h"
 #include "imgui_impl_opengl3.h"
 #include "imgui_impl_sdl.h"
@@ -64,8 +67,24 @@ static SDL_GLContext gl_context;
 
 namespace window {
 
+static ImFont* heading_font;
+static ImFont* normal_font;
+
 std::queue<SDL_Keysym> keyboard_input;
 std::string text_input;
+std::vector<ImFont*> fonts;
+
+void heading(const char* str) {
+    ImGui::PushFont(heading_font);
+    ImGui::Text(str);
+    ImGui::PopFont();
+}
+
+void text(const char* str) {
+    ImGui::PushFont(normal_font);
+    ImGui::Text(str);
+    ImGui::PopFont();
+}
 
 void init() {
 
@@ -222,8 +241,16 @@ void init() {
     //  NULL, io.Fonts->GetGlyphRangesJapanese());
     //
     // IM_ASSERT(font != NULL);
-    io.Fonts->AddFontFromMemoryCompressedTTF(FiraMono_compressed_data,
-                                             FiraMono_compressed_size, 14.0f);
+    
+    // default font
+    io.Fonts->AddFontFromMemoryCompressedTTF(FiraMono_Regular_compressed_data,
+                                             FiraMono_Regular_compressed_size, 14.0f);
+
+    heading_font = io.Fonts->AddFontFromMemoryCompressedTTF(FiraSans_Regular_compressed_data,
+                                             FiraSans_Regular_compressed_size, 17.0f);
+
+    normal_font = io.Fonts->AddFontFromMemoryCompressedTTF(FiraSans_Regular_compressed_data,
+                                             FiraSans_Regular_compressed_size, 14.0f);
 
     // Style
     style.WindowMenuButtonPosition = -1;
