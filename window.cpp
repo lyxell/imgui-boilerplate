@@ -12,7 +12,6 @@
 
 #include "fonts/FiraMono_Regular.h"
 #include "fonts/FiraMono_Medium.h"
-#include "fonts/FiraMono_Bold.h"
 #include "fonts/FiraSans_Regular.h"
 #include "imgui.h"
 #include "imgui_impl_opengl3.h"
@@ -247,7 +246,7 @@ void init() {
                                              FiraMono_Regular_compressed_size, 14.0f);
 
     heading_font = io.Fonts->AddFontFromMemoryCompressedTTF(FiraSans_Regular_compressed_data,
-                                             FiraSans_Regular_compressed_size, 17.0f);
+                                             FiraSans_Regular_compressed_size, 19.0f);
 
     normal_font = io.Fonts->AddFontFromMemoryCompressedTTF(FiraSans_Regular_compressed_data,
                                              FiraSans_Regular_compressed_size, 14.0f);
