@@ -60,7 +60,7 @@ using namespace gl;
 
 // state
 static bool is_exiting_value = false;
-static ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
+static ImVec4 clear_color = ImVec4(1.0f, 1.0f, 1.0f, 1.00f);
 static SDL_Window* window_ptr;
 static SDL_GLContext gl_context;
 
@@ -254,8 +254,10 @@ void init() {
     // Style
     style.WindowMenuButtonPosition = -1;
     style.TabRounding = 0.0f;
-    style.WindowRounding = 2.0f;
+    style.WindowRounding = 8.0f;
     style.WindowBorderSize = 1.0f;
+    style.FrameBorderSize = 1.0f;
+    style.FramePadding = ImVec2(12.0f, 12.0f);
     style.IndentSpacing = 12.0f;
     ImVec4* c = style.Colors;
 
