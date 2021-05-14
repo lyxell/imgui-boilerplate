@@ -180,7 +180,7 @@ void init() {
     // Enable Docking
     io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
     // Enable Multi-Viewport / Platform Windows
-    // io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
+    io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
     // io.ConfigViewportsNoAutoMerge = true;
     // io.ConfigViewportsNoTaskBarIcon = true;
 
@@ -243,19 +243,19 @@ void init() {
     
     // default font
     io.Fonts->AddFontFromMemoryCompressedTTF(FiraMono_Regular_compressed_data,
-                                             FiraMono_Regular_compressed_size, 14.0f);
+                                             FiraMono_Regular_compressed_size, 16.0f);
 
     heading_font = io.Fonts->AddFontFromMemoryCompressedTTF(FiraSans_Regular_compressed_data,
-                                             FiraSans_Regular_compressed_size, 19.0f);
+                                             FiraSans_Regular_compressed_size, 22.0f);
 
     normal_font = io.Fonts->AddFontFromMemoryCompressedTTF(FiraSans_Regular_compressed_data,
-                                             FiraSans_Regular_compressed_size, 14.0f);
+                                             FiraSans_Regular_compressed_size, 18.0f);
 
     // Style
     style.WindowMenuButtonPosition = -1;
     style.TabRounding = 0.0f;
     style.WindowRounding = 2.0f;
-    style.WindowBorderSize = 0.0f;
+    style.WindowBorderSize = 1.0f;
     style.IndentSpacing = 12.0f;
     ImVec4* c = style.Colors;
 
