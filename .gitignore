@@ -1,5 +1,1 @@
-demo
-*.o
-.gdb_history
-imgui.ini
-*.a
+build
